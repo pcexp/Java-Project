@@ -1,0 +1,16 @@
+TODO List:
+
+* Create a Movie class that holds movies with properties:
+    - id
+    - title
+    - release date
+    - imdb link
+    - genre list
+    - average rating of movie
+
+* Create a User class that holds users with properties:
+    - id
+    - age
+    - gender
+    - occupation
+    - average rating of user
