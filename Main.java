@@ -1,18 +1,19 @@
-import org.w3c.dom.ls.LSOutput;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class Main {
+    public Main() throws IOException {
+    }
+
     public static void main(String[] args) throws IOException {
-
-        //System.out.println(allUsers());
         ArrayList< User > userStorage4 = allUsers();
-        System.out.println(userStorage4);
 
-        new User().displayUser(userStorage4.get(10));
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter user sequence number to display information : " );
+        int userId =  scanner.nextInt();
+        new User().displayUser(userStorage4.get(userId));
     }
 
 
