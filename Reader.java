@@ -10,17 +10,18 @@ public class Reader {
     public List<User> readUser() throws FileNotFoundException {
 
         Scanner scanner = new Scanner(new File(USER_FILE_PATH));
-        List<User> userContainer = new ArrayList<User>();
+        List<User> userContainer = new ArrayList<>();
 
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
-            String [] userInfos = line.split("\\|");
-            User user = new User();
-            user.id = Integer.parseInt(userInfos[0]);
-            user.age = Integer.parseInt(userInfos[1]);
-            user.gender = userInfos[2].charAt(0);
-            user.occupationId = Integer.parseInt(userInfos[3]);
+            String[] userInfos = line.split("\\|");
 
+            Integer id = Integer.parseInt(userInfos[0]);
+            Integer age = Integer.parseInt(userInfos[1]);
+            Character gender = userInfos[2].charAt(0);
+            Integer occupationId = Integer.parseInt(userInfos[3]);
+
+            User user = new User(id, age, gender, occupationId);
             userContainer.add(user);
         }
         return userContainer;

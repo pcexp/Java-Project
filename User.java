@@ -1,20 +1,32 @@
 public class User {
-    int id;
-    int age;
-    char gender;
-    int occupationId;
-    String occupation;
-    float averageRating;
+    private Integer id;
+    private Integer age;
+    private Character gender;
+    private Integer occupationId;
 
     public User(){
     }
 
-    public User(int id, int age, char gender, int occupationId, String occupation, float averageRating) {
+    public User(Integer id, Integer age, Character gender, Integer occupationId) {
         this.id = id;
         this.age = age;
         this.gender = gender;
         this.occupationId = occupationId;
-        this.occupation = occupation;
-        this.averageRating = averageRating;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public Character getGender() {
+        return gender;
+    }
+
+    public Integer getOccupationId() {
+        return occupationId;
     }
 }
