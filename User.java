@@ -1,4 +1,3 @@
-
 public class User {
     int id;
     int age;
@@ -7,15 +6,15 @@ public class User {
     String occupation;
     float averageRating;
 
+    public User(){
+    }
 
-public void displayUser( User user){
-    System.out.println("User id : " + user.id );
-    System.out.println("User age : " + user.age );
-    System.out.println("User gender : " + user.gender );
-    System.out.println("User occupation id  : " + user.occupationId );
-    System.out.println("User occupation : " + user.occupation );
-    System.out.println("User average rate : " + user.averageRating );
-    System.out.println();
-}
-
+    public User(int id, int age, char gender, int occupationId, String occupation, float averageRating) {
+        this.id = id;
+        this.age = age;
+        this.gender = gender;
+        this.occupationId = occupationId;
+        this.occupation = occupation;
+        this.averageRating = averageRating;
+    }
 }

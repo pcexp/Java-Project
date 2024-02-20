@@ -1,27 +1,29 @@
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
-import java.io.IOException;
+
 
 public class Reader {
-    // METHOD 1
-    public ArrayList<ArrayList<String>> readUser(String fileName) throws IOException {
 
-        Path path = Paths.get(fileName);
-        Scanner scanner = new Scanner(path);
+    private static final String USER_FILE_PATH = "data/u.user";
 
-        ArrayList< ArrayList<String> > userStorage1 = new ArrayList<>();
+    public List<User> readUser() throws FileNotFoundException {
+
+        Scanner scanner = new Scanner(new File(USER_FILE_PATH));
+        List<User> userContainer = new ArrayList<User>();
 
         while (scanner.hasNextLine()) {
-            //process each line
             String line = scanner.nextLine();
-            List<String> separator = Arrays.asList(line.split("\\|"));
-            ArrayList<String> myArray = new ArrayList<String>(separator);
-            userStorage1.add(myArray);
-        }
+            String [] userInfos = line.split("\\|");
+            User user = new User();
+            user.id = Integer.parseInt(userInfos[0]);
+            user.age = Integer.parseInt(userInfos[1]);
+            user.gender = userInfos[2].charAt(0);
+            user.occupationId = Integer.parseInt(userInfos[3]);
 
-        scanner.close();
-        return userStorage1;
+            userContainer.add(user);
+        }
+        return userContainer;
     }
 
 }
