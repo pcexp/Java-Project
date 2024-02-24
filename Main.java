@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        List<User> users = new Reader().readUser();
+        List<User> users = Reader.readUser();
         System.out.println(users);
 
 

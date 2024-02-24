@@ -6,11 +6,12 @@ import java.util.*;
 public class Reader {
 
     private static final String USER_FILE_PATH = "data/u.user";
+    private static Scanner scanner;
 
-    public List<User> readUser() throws FileNotFoundException {
+    public static List<User> readUser() throws FileNotFoundException {
 
-        Scanner scanner = new Scanner(new File(USER_FILE_PATH));
-        List<User> userContainer = new ArrayList<>();
+        scanner = new Scanner(new File(USER_FILE_PATH));
+        List<User> users = new ArrayList<>();
 
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
@@ -22,9 +23,9 @@ public class Reader {
             Integer occupationId = Integer.parseInt(userInfos[3]);
 
             User user = new User(id, age, gender, occupationId);
-            userContainer.add(user);
+            users.add(user);
         }
-        return userContainer;
+        return users;
     }
 
 }
