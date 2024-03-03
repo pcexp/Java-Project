@@ -1,7 +1,6 @@
 import java.io.FileNotFoundException;
 import java.util.List;
 public class Main {
-
     public static void main(String[] args) throws FileNotFoundException {
 
         List<User> users = new Reader().readUser();
@@ -17,4 +16,5 @@ public class Main {
         System.out.println(data.get(8).getRate());
 
     }
+
 }
