@@ -3,6 +3,9 @@ public class User {
     private Integer age;
     private Character gender;
     private Integer occupationId;
+    public String occupation;
+
+
 
     public User(){
     }
@@ -29,4 +32,8 @@ public class User {
     public Integer getOccupationId() {
         return occupationId;
     }
+
+
+
+
 }
